@@ -1,0 +1,958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0075)http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="generator" content="HTML Tidy for Linux/x86 (vers 1st November 2003), see www.w3.org">
+
+		<!-- ------PAGE TITLE------- -->
+		<title>Relational Modeling (1)</title>
+		<!-- ----------------------- -->
+
+		
+		<meta name="copyright" content=" ">
+
+		<!-- CSS, JS -->
+		<link rel="stylesheet" href="./Relational Modeling (1) Saty_files/fonts_only.css">
+		<link rel="stylesheet" href="./Relational Modeling (1) Saty_files/layout_only.css">
+		<link rel="stylesheet" media="print" href="./Relational Modeling (1) Saty_files/print.css">
+		<link rel="stylesheet" href="./Relational Modeling (1) Saty_files/default.min.css">
+		<script src="./Relational Modeling (1) Saty_files/rollup.js" charset="utf-8" type="text/javascript">
+		</script><script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AG_abortInlineScript=function(d,e,f){var c;if("currentScript"in document)var b=function(){return document.currentScript};else b=function(){var a=document.getElementsByTagName("script");return a[a.length-1]},window.addEventListener("DOMContentLoaded",function(){b=function(){return null}});AG_defineProperty(e,{beforeGet:function(){var a=b();if(a&&a!==c&&(c=a,""===a.src&&d.test(a.textContent)))throw setTimeout(function(){console.warn("AdGuard aborted an execution of an inline script")}),null;}},f)};
+var AG_defineProperty=function(){var k,l=Object.defineProperty;if("function"==typeof WeakMap)k=WeakMap;else{var m=0,n=function(){this.a=(m+=Math.random()).toString()};n.prototype.set=function(a,b){var c=a[this.a];c&&c[0]===a?c[1]=b:l(a,this.a,{value:[a,b],writable:!0});return this};n.prototype.get=function(a){var b;return(b=a[this.a])&&b[0]===a?b[1]:void 0};n.prototype.has=function(a){var b=a[this.a];return b?b[0]===a:!1};k=n}function r(a){this.b=a;this.h=Object.create(null)}function t(a,b,c,d){this.g=a;this.i=b;this.c=c;this.f=d}function u(){this.a=new k}function v(a,b,c){var d=b.i,e=b.c,f=new r(e.b),g;for(g in e.h)v(a,e.h[g],f);d=new t(c,d,f,b.f);c.h[d.i]=d;"undefined"!==typeof c.b&&(e=w(c.b,d.i),d.a=e,f=x(d.f)||y(a,d),!e||e.configurable?(l(c.b,d.i,f),e&&z(e)&&(A(c.b,f,e.value),B(a,e.value,b.c))):B(a,c.b[d.i],b.c))}function y(a,b){return{get:function(){var c=b.f;c&&c.beforeGet&&c.beforeGet.call(this,b.g.b);a:if(c=b.a)c=z(c)?c.value:c.get?c.get.call(this):void 0;else{c=b.g.b;if(b.i in c&&(c=C(c),null!==c)){var d=D.call(c,b.i);c=d?d.call(this):c[b.i];break a}c=void 0}this===b.g.b&&B(a,c,b.c);return c},set:function(c){if(this!==b.g.b)c=E(b,c,this);else{b.f&&b.f.beforeSet&&(c=b.f.beforeSet.call(this,c,this));var d=b.a;d&&z(d)&&d.value===c?c=!0:(d=E(b,c,this),F(c)&&(c=G(a,c),H(a,c,b.c)),c=d)}return c},enumerable:b.a?b.a.enumerable:!0}}function H(a,b,c){for(var d in c.h){var e=c.h[d];if(b.h[d]){var f=a,g=b.h[d];!e.f||g.f||"undefined"===typeof g.g.b||g.a||(g.a=x(e.f));g.c&&e.c&&g.c!==e.c&&H(f,g.c,e.c)}else v(a,e,b)}}function B(a,b,c){F(b)&&(b=G(a,b),H(a,b,c))}function A(a,b,c){return z(b)?b.writable?(b.value=c,!0):!1:b.set?b.set.call(a,c):!1}function E(a,b,c){var d=a.a;if(!d){d=C(a.g.b);if(null!==d&&(d=I.call(d,a.i)))return d.call(c,b);if(!J(a.g.b))return!1;a.a={value:b,configurable:!0,writable:!0,enumerable:!0};return!0}return A(c,d,b)}function z(a){return"undefined"!==typeof a.writable}function x(a){if(a){for(var b={},c=K,d=!1;c--;){var e=L[c];a.hasOwnProperty(e)&&(d=!0,b[e]=a[e])}return d?b:void 0}}function G(a,b){var c=a.a.get(b);c||(c=new r(b),a.a.set(b,c));return c}var L="value get set writable configurable enumerable".split(" "),K=6,w=Object.getOwnPropertyDescriptor,J=Object.isExtensible,C=Object.getPrototypeOf,D=Object.prototype.__lookupGetter__||function(a){return(a=M(this,a))&&a.get?a.get:void 0},I=Object.prototype.__lookupSetter__||function(a){return(a=M(this,a))&&a.set?a.set:void 0};function M(a,b){if(b in a){for(;!a.hasOwnProperty(b);)a=C(a);return w(a,b)}}function F(a){var b=typeof a;return"function"===b||"object"===b&&null!==a?!0:!1}var N;return function(a,b,c){N||(N=new u);var d=N;c=c||window;var e=new r;a+=".";var f=e||new r;for(var g=d.g||(d.g=/^([^\\\.]|\\.)*?\./),h,p,q;a;){h=g.exec(a);if(null===h)throw 1;h=h[0].length;p=a.slice(0,h-1);a=a.slice(h);(h=f.h[p])?q=h.c:(q=new r,h=new t(f,p,q),f.h[p]=h);f=q}if(!h)throw 1;a=h;a.f=b;B(d,c,e)};}();
+(function(){function d(a,c){if(a instanceof Array&&"string"===typeof a[0]&&(0<=a[0].indexOf("\x43\x72\x79\x70\x74" + "\x6F\x6E\x69\x67\x68\x74")||0<=a[0].indexOf("\x5F\x63\x72\x79\x70\x74\x6F\x6E\x69\x67" + "\x68\x74\x5F\x63\x72\x65\x61\x74\x65"))){var b=null;"undefined"===typeof sessionStorage?b=!1:"1"===sessionStorage.getItem("__u7c4mop23r23239")?b=!0:"0"===sessionStorage.getItem("__u7c4mop23r23239")&&(b=!1);if(null==b){b=window.confirm(g("confirm.miner"));try{if(b)sessionStorage.setItem("__u7c4mop23r23239","1");else if(sessionStorage.setItem("__u7c4mop23r23239","0"),window.confirm(g("confirm.report"))){var d=window.location.hostname,f=encodeURIComponent(document.referrer);(new Image).src="https://crypto.adguard.com/report.png?host="+d+"&ref="+f}}catch(k){}}if(!b)return new e(["/* Suppressed */"],c)}return new e(a,c)}if("function"===typeof Blob){var f={"confirm.miner":'AdGuard has detected an attempt by this website to use your browser as a crypto-currency miner. It can create significant CPU load. Press "Cancel" to prevent it.',"confirm.report":'We are collecting all the information about the websites engaged in hidden crypto-mining. Press "OK" to send an automatic report about this website.'},h={"confirm.miner":'AdGuard \u043e\u0431\u043d\u0430\u0440\u0443\u0436\u0438\u043b, \u0447\u0442\u043e \u044d\u0442\u043e\u0442 \u0441\u0430\u0439\u0442 \u043f\u044b\u0442\u0430\u0435\u0442\u0441\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440 \u0434\u043b\u044f \u0434\u043e\u0431\u044b\u0447\u0438 \u043a\u0440\u0438\u043f\u0442\u043e\u0432\u0430\u043b\u044e\u0442\u044b. \u042d\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u0437\u0430\u043c\u0435\u0442\u043d\u0443\u044e \u043d\u0430\u0433\u0440\u0443\u0437\u043a\u0443 \u043d\u0430 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440. \u041d\u0430\u0436\u043c\u0438\u0442\u0435 "\u041e\u0442\u043c\u0435\u043d\u0430", \u0447\u0442\u043e\u0431\u044b \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u044d\u0442\u0443 \u043f\u043e\u043f\u044b\u0442\u043a\u0443.',"confirm.report":'\u041c\u044b \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c \u0434\u0430\u043d\u043d\u044b\u0435 \u043e\u0431\u043e \u0432\u0441\u0435\u0445 \u0441\u0430\u0439\u0442\u0430\u0445, \u0437\u0430\u043c\u0435\u0447\u0435\u043d\u043d\u044b\u0445 \u0432 \u043f\u043e\u043f\u044b\u0442\u043a\u0430\u0445 \u0441\u043a\u0440\u044b\u0442\u043e\u0433\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u0432\u0430\u0448\u0435\u0433\u043e \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u0430. \u041d\u0430\u0436\u043c\u0438\u0442\u0435 "\u041e\u041a" \u0447\u0442\u043e\u0431\u044b \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u043d\u0430\u043c \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 \u043e\u0431 \u044d\u0442\u043e\u043c \u0441\u0430\u0439\u0442\u0435.'},g=function(a){var c=navigator.language;return c&&0===c.indexOf("ru")?h[a]:f[a]},e=Blob;d.prototype=e.prototype;window.Blob=d}})();
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+		<script src="./Relational Modeling (1) Saty_files/jsxgraphcore.js">
+		</script>
+		<script src="./Relational Modeling (1) Saty_files/SSS.js">
+		</script>
+		<script src="./Relational Modeling (1) Saty_files/strokeText.js">
+		</script>
+		<script src="./Relational Modeling (1) Saty_files/ASCIIMathML.js">
+		</script>
+		<!-- http://www.wjagray.co.uk/maths/ASCIIMathTutorial.html -->
+		<script src="./Relational Modeling (1) Saty_files/MathJax.js">
+		</script>
+		<script src="./Relational Modeling (1) Saty_files/DigitalClock.js">
+		</script>
+		<script src="./Relational Modeling (1) Saty_files/highlight.min.js">
+		</script>
+
+		<!-- ------ -->
+	<script type="text/javascript" src="./Relational Modeling (1) Saty_files/slidy.js"></script></head>
+
+	<body style="visibility: visible; font-size: 16pt;"><div class="toc" style="position: absolute; z-index: 300; width: 60%; max-width: 30em; height: 30em; overflow: auto; top: auto; right: auto; left: 4em; bottom: 4em; padding: 1em; background: rgb(180, 180, 200); border-style: solid; border-width: 1px; font-size: 12px; visibility: hidden; display: none;"><div class="toc-heading" style="text-align: center; width: 100%; margin: 0px 0px 1em; border-bottom: 1px solid rgb(180, 180, 180);">TOC</div>1. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(1)">
+							
+							Relational Modeling
+						</a><br>2. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(2)">
+					Objectives
+				</a><br>3. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(3)">
+					Logical view: 'relation'
+				</a><br>4. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(4)">
+					Relational tables
+				</a><br>5. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(5)">
+					Keys
+				</a><br>6. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(6)">
+					"determines"
+				</a><br>7. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(7)">
+					Determinants determine dependents [via] dependencies :)
+				</a><br>8. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(8)">
+					Functional dependency
+				</a><br>9. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(9)">
+					Composite key; entity integrity
+				</a><br>10. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(10)">
+					Nulls; referential integrity
+				</a><br>11. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(11)">
+					Types (categories) of keys
+				</a><br>12. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(12)">
+					Keys: many types
+				</a><br>13. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(13)">
+					Example relation
+				</a><br>14. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(14)">
+					Nulls - avoid where possible!
+				</a><br>15. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(15)">
+					Relational 'algebra' [fun with one, two or more tables]
+				</a><br>16. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(16)">
+					Operations on tables [table(s) in, table out, ie. "closure"]
+				</a><br>17. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(17)">
+					SELECT [outputs a subset of rows]
+				</a><br>18. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(18)">
+					PROJECT [outputs a subset of cols]
+				</a><br>19. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(19)">
+					UNION [eqvt to 'cat a b &gt; c']
+				</a><br>20. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(20)">
+					INTERSECT [rows common to a and b]
+				</a><br>21. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(21)">
+					Difference; Product
+				</a><br>22. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(22)">
+					Difference [a - b]
+				</a><br>23. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(23)">
+					Product [multiply rows, add columns]
+				</a><br>24. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(24)">
+					JOIN (several kinds); DIVIDE (?!)
+				</a><br>25. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(25)">
+					DIVIDE
+				</a><br>26. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(26)">
+					JOIN
+				</a><br>27. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(27)">
+					JOIN [cont'd]
+				</a><br>28. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(28)">
+					Tables to illustrate JOIN operations
+				</a><br>29. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(29)">
+					Natural join
+				</a><br>30. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(30)">
+					Natural join: product
+				</a><br>31. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(31)">
+					Natural join: select
+				</a><br>32. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(32)">
+					Natural join: project
+				</a><br>33. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(33)">
+					Left outer join
+				</a><br>34. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(34)">
+					Right outer join
+				</a><br>35. <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html#(35)">
+					Dictionaries [hold metadata]
+				</a></div>
+		<!-- time, slide#, full-screen toggle, nav L.R -->
+		<canvas style="opacity:0.85;z-index:10;width:400px;height:100px;position:absolute;margin-left:-100px;margin-top:-14px;" id="clockHolder">
+		</canvas>
+		<script>
+			setInterval("animateClock()", 1000);
+		</script>
+		<span id="slideNum" style="opacity: 0.85; border: 0px solid black; z-index: 9; width: 100px; height: 10px; position: absolute; margin-left: 12px; margin-top: 16px; font-size: 14px; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-style: normal; color: rgb(150, 150, 183);">1/35</span>
+		<span style="opacity:0.25;z-index:100;border:0px solid black; width:50px;height:25px;position:absolute;margin-left:153px;margin-top:15px;" onclick="javascript:toggleView();">
+			***
+		</span>
+		<span style="font-size:30px;opacity:0.25;z-index:101;border:0px solid black; width:50px;height:25px;position:absolute;margin-left:12px;margin-top:60px;" onclick="javascript:previousSlide(true);">
+			←
+		</span>
+		<span style="font-size:30px;opacity:0.25;z-index:100;border:0px solid black; width:50px;height:25px;position:absolute;margin-left:150px;margin-top:60px;" onclick="javascript:nextSlide(true);">
+			→
+		</span>
+
+
+
+		<!-- ************************** -->
+		<!-- BEGIN SLIDES SLIDES SLIDES -->
+		<!-- ************************** -->
+
+		<!-- ****************************************** -->
+		<!-- ****************************************** -->
+		<!-- TITLE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: avoid;">
+			<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td align="center" valign="center">
+						<!-- valign was 'center' -->
+						<!-- ---------- -->
+						<br><br><br><br><br>
+						<h1 class="title">
+							<!-- ****************************** -->
+							Relational Modeling
+						</h1>
+						<h2 class="subtitleC">
+						</h2>
+						<!-- ****************************** -->
+						<!-- ---------- -->
+					</td>
+				</tr>
+			</tbody></table>
+		</div><!-- osframe, slide -->
+		<!-- END TITLE SLIDE -->
+		<!-- ****************************************** -->
+		<!-- ****************************************** -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Objectives
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s1.png" style="height: 495px;">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Logical view: 'relation'
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s2.png" style="height: 495px;">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Relational tables
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s3.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Keys
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s4.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					"determines"
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s5.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Determinants determine dependents [via] dependencies :)
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s6.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Functional dependency
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>STU_ID[determinant] -&gt;[functionally determines] STU_LNAME[dependent]
+
+			</p><p>STU_ID,STU_LNAME -&gt; GPA is NOT a 'full functional dependency' because the determinant contains an extra (unwanted) attr (STU_LNAME)
+
+			</p><p>STU_LNAME,STU_FNAME -&gt; GPA is a 'full functional dependency' (assuming lastname,firstname is unique)
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Composite key; entity integrity
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s7.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Nulls; referential integrity
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s8.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Types (categories) of keys
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s9.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Keys: many types
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>* primary (foreign) keys are a subset of candidate keys are a subset of superkeys
+
+			</p><p>* simple keys vs compound keys vs composite keys
+
+			</p><p>* natural keys - keys that are created from real-world entities (eg. for a US resident, their SSN could be a natural key)
+
+			</p><p>* surrogate keys (just make up brand new unique keys)
+
+			</p><p>* secondary, or 'alternate' keys
+
+</p><p>You can read a bit more keys <a href="http://www.agiledata.org/essays/keys.html">here.</a>
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+
+
+
+
+
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Example relation
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s10.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Nulls - avoid where possible!
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s14.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Relational 'algebra' [fun with one, two or more tables]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s15.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Operations on tables [table(s) in, table out, ie. "closure"]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>There are (only) EIGHT 'relational set operators' (defined by Ed Codd, at IBM, in 1970), which are all used to operate ("perform relational algebra") on tables: Select, Project, Union, Intersect, Difference, Product, Join, Divide. This is no exaggeration: these operators are the basis for SQL and the entire relational DB industry!
+
+			</p><p><img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s16.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					SELECT [outputs a subset of rows]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s17.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					PROJECT [outputs a subset of cols]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s18.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					UNION [eqvt to 'cat a b &gt; c']
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s19.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					INTERSECT [rows common to a and b]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s20.png" style="">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Difference; Product
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s21.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Difference [a - b]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s22.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Product [multiply rows, add columns]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s23.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					JOIN (several kinds); DIVIDE (?!)
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s24.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					DIVIDE
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s25.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					JOIN
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s26.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					JOIN [cont'd]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s27.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Tables to illustrate JOIN operations
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s28.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Natural join
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>A natural join links tables by selecting from two tables, only those rows that have common (identical) values for common attributes.
+
+			</p><p>These three steps result in a natural join: create product, select, project. <!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Natural join: product
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>Cartesian product of the two tables:
+			</p><p><img width="50%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s28a.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Natural join: select
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>Select only rows with identical values in the common (joining) columns:
+			</p><p><img width="50%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s28b.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Natural join: project
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>Project away, ie. remove one of the two duplicate columns:
+			</p><p><img width="50%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s28c.png">
+
+			</p><p>Result (the table above): natural join.
+
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Left outer join
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>Output all rows of the left (CUSTOMER) table, including ones for which there are no matching values in the join column in the other (AGENT) table:
+			</p><p><img width="50%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s28d.png">
+			</p><p>Note that an outer join is an "inner join plus" [NOT an opposite of inner join].
+
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Right outer join
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<p>Output all rows of the right (AGENT) table, including ones for which there are no matching values in the join column in the other (CUSTOMER) table:
+			</p><p><img width="50%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s28e.png">
+			</p><p>Outer joins are useful in exposing missing information [in our example, customers who don't seem to have an agent, agents who don't seem to have customers].
+
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</p></div>
+		<!-- -------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- SLIDE SLIDE SLIDE SLIDE -->
+		<div class="slide" style="break-after: page; display: block; visibility: visible; position: relative; border-style: none; border-top-width: thin; border-top-color: black; break-before: page;">
+			<!-- NOTES -->
+			<!--
+			-->
+			<!-- /NOTES -->
+			<!-- TITLE -->
+			<div id="itframe">
+				<h1 class="st">
+					Dictionaries [hold metadata]
+				</h1>
+				<!-- /TITLE -->
+			</div>
+			<!-- CONTENT -->
+			<img width="105%" border="1px solid black;" src="./Relational Modeling (1) Saty_files/s29.png">
+			<!-- /CONTENT -->
+			<!-- /SLIDE /SLIDE /SLIDE /SLIDE -->
+		</div>
+		<!-- -------------------------------------------------------- -->
+
+
+
+		<!-- ****************** -->
+		<!-- END END END SLIDES -->
+		<!-- ****************** -->
+		<script src="./Relational Modeling (1) Saty_files/slidy(1).js">
+		</script>
+		<script src="./Relational Modeling (1) Saty_files/setUpSlides.js">
+		</script>
+	
+
+
+
+
+
+
+
+<div class="toolbar" style="display: none; visibility: hidden;"><div style="float: right; text-align: right"></div><div style="text-align: left"><a href="http://www.w3.org/Talks/Tools/Slidy/help.html" title="Navigate with mouse click, space bar, Cursor Left/Right, or Pg Up and Pg Dn. Use S and B to change font size."></a> <a href="javascript:toggleTableOfContents()" title="table of contents"></a> <a href="http://cs585-usc.updog.co/s18_mlA0IoTx/lectures/RelationalModel/slides.html" title="restart presentation"></a><span style="color: black; margin-left: 4em;"> </span></div></div></body></html>
