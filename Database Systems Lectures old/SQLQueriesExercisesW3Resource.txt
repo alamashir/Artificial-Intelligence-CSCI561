@@ -1,3 +1,0 @@
-http://www.w3resource.com/sql-exercises/sql-retrieve-from-table.php
-
-Exercises 6-11 to start with :)
